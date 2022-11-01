@@ -6,24 +6,18 @@ plugins {
 }
 
 android {
-    def TARGET_SDK = 33
-
     namespace 'com.w2sv.kotlinutils'
-    compileSdkVersion TARGET_SDK
+    compileSdkVersion 33
 
     defaultConfig {
         minSdk 14
-        targetSdk TARGET_SDK
 
-        versionCode 1
-        versionName '0.0.1'
-
-        consumerProguardFiles 'consumer-rules.pro'
+        versionCode 2
+        versionName '0.0.2'
     }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
