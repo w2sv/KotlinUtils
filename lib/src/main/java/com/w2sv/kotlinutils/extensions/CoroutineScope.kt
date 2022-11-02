@@ -1,7 +1,10 @@
 package com.w2sv.kotlinutils.extensions
 
+import com.w2sv.kotlinutils.UnitFun
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -29,4 +32,10 @@ fun <P, R> CoroutineScope.executeAsyncTaskWithProgressUpdateReceiver(
                 }
             }
         )
+    }
+
+inline fun CoroutineScope.launchDelayed(timeMillis: Long, crossinline f: UnitFun): Job =
+    launch {
+        delay(timeMillis)
+        f()
     }
