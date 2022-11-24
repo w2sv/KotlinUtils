@@ -18,4 +18,4 @@ implementation 'com.github.w2sv:KotlinUtils:<BRANCH-NAME>-SNAPSHOT'
 
 ## License
 
-[GPL-3.0](https://github.com/w2sv/KotlinUtils/blob/main/LICENSE)
+[MIT](https://github.com/w2sv/KotlinUtils/blob/main/LICENSE)
