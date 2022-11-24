@@ -5,31 +5,44 @@ package com.w2sv.kotlinutils.delegates
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-class AutoSwitch(private var value: Boolean, private val switchOn: Boolean) :
+/**
+ * [Boolean] delegate, automatically inverting its value upon calling its getter
+ * if [value]==[switchOn]
+ */
+class AutoSwitch(var value: Boolean, private val switchOn: Boolean) :
     ReadWriteProperty<Any?, Boolean> {
 
-    override fun getValue(thisRef: Any?, property: KProperty<*>): Boolean =
+    fun checkWithEventualSnap(): Boolean =
         value
             .also {
                 if (it == switchOn)
                     value = !it
             }
 
+    override fun getValue(thisRef: Any?, property: KProperty<*>): Boolean =
+        checkWithEventualSnap()
+
     override fun setValue(thisRef: Any?, property: KProperty<*>, value: Boolean) {
         this.value = value
     }
 
+    /**
+     * Combines the [AutoSwitch] functionality with the one of a map delegate
+     */
     class Mapped(
         private val map: MutableMap<String, Boolean>,
         private val switchOn: Boolean
     ) : ReadWriteProperty<Any?, Boolean> {
 
-        override fun getValue(thisRef: Any?, property: KProperty<*>): Boolean =
-            map.getValue(property.name)
+        fun checkWithEventualSnap(key: String): Boolean =
+            map.getValue(key)
                 .also {
                     if (it == switchOn)
-                        map[property.name] = !it
+                        map[key] = !it
                 }
+
+        override fun getValue(thisRef: Any?, property: KProperty<*>): Boolean =
+            checkWithEventualSnap(property.name)
 
         override fun setValue(thisRef: Any?, property: KProperty<*>, value: Boolean) {
             map[property.name] = value
