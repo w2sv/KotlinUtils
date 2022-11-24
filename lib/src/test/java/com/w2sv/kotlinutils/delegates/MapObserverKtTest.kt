@@ -11,7 +11,7 @@ internal class MapObserverKtTest {
     }
 
     private val map = mutableMapOf("property" to 69)
-    private var property by mapObserver(map) { _, _, _ ->
+    private var property by MapObserver(map) { _, _, _ ->
         nObserverCalls += 1
     }
 
