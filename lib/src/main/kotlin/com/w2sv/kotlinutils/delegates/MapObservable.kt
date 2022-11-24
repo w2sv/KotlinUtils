@@ -6,9 +6,11 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 /**
+ * Delegate combining the functionality of a map delegate and an observable
+ *
  * Reference: https://stackoverflow.com/a/52814429/12083276
  */
-class MapObserver<T>(
+class MapObservable<T>(
     private val map: MutableMap<String, T>,
     private val observe: ((property: KProperty<*>, oldValue: T, newValue: T) -> Unit)
 ) : ReadWriteProperty<Any?, T> {
