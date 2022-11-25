@@ -5,7 +5,7 @@
 [![Build](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml/badge.svg)](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml)
 ![GitHub](https://img.shields.io/github/license/w2sv/KotlinUtils)
 
-A collection of utils for Android Development 
+A collection of kotlin utils built for Android Development 
 
 ## Installation with gradle & jitpack
 
