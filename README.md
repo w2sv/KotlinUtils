@@ -2,9 +2,10 @@
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/w2sv/KotlinUtils?include_prereleases)
 [![](https://jitpack.io/v/w2sv/KotlinUtils.svg)](https://jitpack.io/#w2sv/KotlinUtils)
+[![Build](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml/badge.svg)](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml)
 ![GitHub](https://img.shields.io/github/license/w2sv/KotlinUtils)
 
-A collection of utils for Android Development 
+A collection of pure kotlin utils built for Android Development 
 
 ## Installation with gradle & jitpack
 
@@ -18,4 +19,4 @@ implementation 'com.github.w2sv:KotlinUtils:<BRANCH-NAME>-SNAPSHOT'
 
 ## License
 
-[GPL-3.0](https://github.com/w2sv/KotlinUtils/blob/main/LICENSE)
+[MIT](https://github.com/w2sv/KotlinUtils/blob/main/LICENSE)
