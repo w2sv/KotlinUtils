@@ -11,11 +11,14 @@ fun dateTimeNow(pattern: String = "yyyyMMdd_HHmmss", locale: Locale = Locale.ENG
     SimpleDateFormat(pattern, locale)
         .format(Date())
 
-fun timeDelta(earlier: Date, later: Date, timeUnit: TimeUnit): Long =
+fun dateFromUnixTimestamp(unixTimestamp: String): Date =
+    Date(unixTimestamp.toLong() * 1000)
+
+fun timeDelta(a: Date, b: Date, timeUnit: TimeUnit): Long =
     timeUnit.convert(
-        later.time - earlier.time,
+        a.time - b.time,
         TimeUnit.MILLISECONDS
     )
 
-fun dateFromUnixTimestamp(unixTimestamp: String): Date =
-    Date(unixTimestamp.toLong() * 1000)
+fun timeDeltaFromNow(date: Date, timeUnit: TimeUnit): Long =
+    timeDelta(date, Date(System.currentTimeMillis()), timeUnit)

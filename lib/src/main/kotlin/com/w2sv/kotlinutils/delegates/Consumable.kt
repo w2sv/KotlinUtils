@@ -15,6 +15,9 @@ class Consumable<T>(var value: T? = null) : ReadWriteProperty<Any, T?> {
         value
             .also { value = null }
 
+    fun isConsumable(): Boolean =
+        value != null
+
     override fun getValue(thisRef: Any, property: KProperty<*>): T? =
         consume()
 
