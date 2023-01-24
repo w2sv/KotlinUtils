@@ -12,7 +12,7 @@ import kotlin.reflect.KProperty
 class AutoSwitch(var value: Boolean, private val switchOn: Boolean) :
     ReadWriteProperty<Any?, Boolean> {
 
-    fun getWithPossibleAutoSwitch(): Boolean =
+    fun getWithEventualSwitch(): Boolean =
         value
             .also {
                 if (it == switchOn)
@@ -20,7 +20,7 @@ class AutoSwitch(var value: Boolean, private val switchOn: Boolean) :
             }
 
     override fun getValue(thisRef: Any?, property: KProperty<*>): Boolean =
-        getWithPossibleAutoSwitch()
+        getWithEventualSwitch()
 
     override fun setValue(thisRef: Any?, property: KProperty<*>, value: Boolean) {
         this.value = value
@@ -34,7 +34,7 @@ class AutoSwitch(var value: Boolean, private val switchOn: Boolean) :
         private val switchOn: Boolean
     ) : ReadWriteProperty<Any?, Boolean> {
 
-        fun getWithPossibleAutoSwitch(key: String): Boolean =
+        fun getWithEventualSwitch(key: String): Boolean =
             map.getValue(key)
                 .also {
                     if (it == switchOn)
@@ -42,11 +42,10 @@ class AutoSwitch(var value: Boolean, private val switchOn: Boolean) :
                 }
 
         override fun getValue(thisRef: Any?, property: KProperty<*>): Boolean =
-            getWithPossibleAutoSwitch(property.name)
+            getWithEventualSwitch(property.name)
 
         override fun setValue(thisRef: Any?, property: KProperty<*>, value: Boolean) {
             map[property.name] = value
         }
     }
 }
-
