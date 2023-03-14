@@ -6,8 +6,8 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 /**
- * Delegate of objects, the value of which is to be retrieved exactly once.
- * After getting (==consuming) its value, it will be automatically set to null
+ * Delegate of objects, who are to be retrieved exactly once.
+ * After getting (consuming) its value, it will be automatically set to null
  */
 class Consumable<T>(var value: T? = null) : ReadWriteProperty<Any, T?> {
 
