@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
-    id 'de.mannodermaus.android-junit5'
 }
 
 android {
@@ -17,11 +16,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = '17'
+    kotlin {
+        jvmToolchain(11)
     }
     buildFeatures {
         buildConfig false
@@ -29,6 +28,11 @@ android {
     publishing {
         singleVariant('release') {
             withSourcesJar()
+        }
+    }
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
         }
     }
 }
@@ -48,8 +52,6 @@ afterEvaluate {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.ext.kotlinVersion"
-
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
 }
