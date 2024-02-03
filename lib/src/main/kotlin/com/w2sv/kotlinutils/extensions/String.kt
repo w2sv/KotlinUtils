@@ -4,14 +4,6 @@ package com.w2sv.kotlinutils.extensions
 
 import java.util.Locale
 
-fun String.numericallyInflected(quantity: Int): String =
-    run {
-        if (quantity > 1)
-            plus("s")
-        else
-            this
-    }
-
 /**
  * @see
  *  https://stackoverflow.com/a/67843987/12083276
