@@ -14,6 +14,6 @@ class FloatKtTest {
         assertEquals("1.1", 1.1f.rounded(1))
         assertEquals("1", 1.1f.rounded(0))
         assertEquals("1", 1.49999f.rounded(0))
-        assertEquals("2", 1.5f.rounded(2))
+        assertEquals("1.50", 1.5f.rounded(2))
     }
 }
