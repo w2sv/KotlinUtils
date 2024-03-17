@@ -5,14 +5,16 @@
 [![Build](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml/badge.svg)](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml)
 ![GitHub](https://img.shields.io/github/license/w2sv/KotlinUtils)
 
-A collection of pure kotlin utils built for Android Development 
+A collection of pure kotlin utils built for Android Development
 
 ## Installation with gradle & jitpack
 
 ```gradle
 implementation 'com.github.w2sv:KotlinUtils:x.y.z'
 ```
+
 or get the latest snapshot of a certain branch:
+
 ```gradle
 implementation 'com.github.w2sv:KotlinUtils:<BRANCH-NAME>-SNAPSHOT'
 ```
