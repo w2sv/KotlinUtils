@@ -1,26 +1,19 @@
 package com.w2sv.kotlinutils.extensions
 
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
+import org.junit.Assert.assertEquals
+import org.junit.Test
 
-internal class BooleanKtTest {
+class BooleanKtTest {
 
-    @ParameterizedTest
-    @CsvSource(
-        "false, 0",
-        "true, 1"
-    )
-    fun toInt(value: Boolean, expected: Int) {
-        Assertions.assertEquals(value.toInt(), expected)
+    @Test
+    fun toInt() {
+        assertEquals(0, false.toInt())
+        assertEquals(1, true.toInt())
     }
 
-    @ParameterizedTest
-    @CsvSource(
-        "false, -1",
-        "true, 1"
-    )
-    fun toNonZeroInt(value: Boolean, expected: Int) {
-        Assertions.assertEquals(value.toNonZeroInt(), expected)
+    @Test
+    fun toNonZeroInt() {
+        assertEquals(-1, false.toNonZeroInt())
+        assertEquals(1, true.toNonZeroInt())
     }
 }

@@ -1,18 +1,14 @@
 package com.w2sv.kotlinutils.extensions
 
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
+import org.junit.Assert.assertEquals
+import org.junit.Test
 
-internal class StringKtTest {
+class StringKtTest {
 
-    @ParameterizedTest
-    @CsvSource(
-        "ayran, Ayran",
-        "aYRAN, AYRAN",
-        "AYRAN, AYRAN",
-    )
-    fun capitalized(string: String, expected: String) {
-        Assertions.assertEquals(expected, string.capitalized())
+    @Test
+    fun capitalized() {
+        assertEquals("Ayran", "ayran".capitalized())
+        assertEquals("aYRAN", "AYRAN".capitalized())
+        assertEquals("AYRAN", "AYRAN".capitalized())
     }
 }

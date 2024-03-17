@@ -7,7 +7,7 @@ import java.util.Date
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
-fun dateTimeNow(pattern: String = "yyyyMMdd_HHmmss", locale: Locale = Locale.ENGLISH): String =
+fun dateTimeNow(pattern: String = "yyyyMMdd_HHmmss", locale: Locale = Locale.getDefault()): String =
     SimpleDateFormat(pattern, locale)
         .format(Date())
 

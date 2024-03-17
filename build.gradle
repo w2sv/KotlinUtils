@@ -1,10 +1,10 @@
 buildscript {
-    ext.kotlinVersion = '1.8.10'
-    ext.compileSdk = 33
+    ext.kotlinVersion = '1.9.22'
+    ext.compileSdk = 34
     ext.minSdk = 14
 }
 
 plugins {
-    id 'com.android.library' version '8.0.0-rc01' apply false
+    id 'com.android.library' version '8.3.0' apply false
     id 'org.jetbrains.kotlin.android' version "$kotlinVersion" apply false
 }
