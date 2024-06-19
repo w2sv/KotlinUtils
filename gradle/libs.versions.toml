@@ -1,13 +1,8 @@
 [versions]
-minSdk = "14"
-compileSdk = "34"
-
-kotlin = "1.9.22"
-agp = "8.3.0"
+kotlin = "2.0.0"
 
 [libraries]
 junit = "junit:junit:4.13.2"
 
 [plugins]
-android-library = { id = "com.android.library", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
