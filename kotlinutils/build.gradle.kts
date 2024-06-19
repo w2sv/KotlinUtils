@@ -9,7 +9,7 @@ kotlin {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
+        register<MavenPublication>("mavenJava") {
             groupId = "com.w2sv.kotlinutils"
             artifactId = "kotlinutils"
             version = version.toString()
@@ -30,9 +30,9 @@ publishing {
                 }
             }
 
-//            afterEvaluate {
-//                from(components["release"])
-//            }
+            afterEvaluate {
+                from(components["java"])
+            }
         }
     }
 }
