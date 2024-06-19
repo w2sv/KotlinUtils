@@ -6,7 +6,7 @@ import org.junit.Test
 class StringKtTest {
 
     @Test
-    fun capitalized() {
+    fun capitalize() {
         assertEquals("Ayran", "ayran".capitalize())
         assertEquals("AYRAN", "aYRAN".capitalize())
         assertEquals("AYRAN", "AYRAN".capitalize())

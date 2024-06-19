@@ -6,13 +6,13 @@ import org.junit.Test
 class BooleanKtTest {
 
     @Test
-    fun toInt() {
+    fun asInt() {
         assertEquals(0, false.asInt)
         assertEquals(1, true.asInt)
     }
 
     @Test
-    fun toNonZeroInt() {
+    fun asSignedInt() {
         assertEquals(-1, false.asSignedInt)
         assertEquals(1, true.asSignedInt)
     }
