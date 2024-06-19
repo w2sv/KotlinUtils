@@ -7,8 +7,8 @@ class StringKtTest {
 
     @Test
     fun capitalized() {
-        assertEquals("Ayran", "ayran".capitalized())
-        assertEquals("AYRAN", "aYRAN".capitalized())
-        assertEquals("AYRAN", "AYRAN".capitalized())
+        assertEquals("Ayran", "ayran".capitalize())
+        assertEquals("AYRAN", "aYRAN".capitalize())
+        assertEquals("AYRAN", "AYRAN".capitalize())
     }
 }

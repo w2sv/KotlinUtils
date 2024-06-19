@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.w2sv.kotlinutils
+package com.w2sv.kotlinutils.time
 
 import java.text.SimpleDateFormat
 import java.util.Date

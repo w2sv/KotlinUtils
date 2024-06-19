@@ -7,13 +7,13 @@ class BooleanKtTest {
 
     @Test
     fun toInt() {
-        assertEquals(0, false.toInt())
-        assertEquals(1, true.toInt())
+        assertEquals(0, false.asInt)
+        assertEquals(1, true.asInt)
     }
 
     @Test
     fun toNonZeroInt() {
-        assertEquals(-1, false.toNonZeroInt())
-        assertEquals(1, true.toNonZeroInt())
+        assertEquals(-1, false.asSignedInt)
+        assertEquals(1, true.asSignedInt)
     }
 }

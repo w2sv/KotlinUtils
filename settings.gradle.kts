@@ -15,4 +15,4 @@ dependencyResolutionManagement {
     }
 }
 
-include(":lib")
+include(":kotlinutils")
