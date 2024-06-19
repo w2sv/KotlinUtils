@@ -7,21 +7,21 @@ import java.time.ZoneId
 import java.time.temporal.WeekFields
 import java.util.Locale
 
-fun localDateTimeFromSecondsUnixTimeStamp(
-    secondsTimestamp: Long,
+fun localDateTimeFromSecondsUnixTimestamp(
+    timestamp: Long,
     zoneId: ZoneId = ZoneId.systemDefault()
 ): LocalDateTime =
     LocalDateTime.ofInstant(
-        Instant.ofEpochSecond(secondsTimestamp),
+        Instant.ofEpochSecond(timestamp),
         zoneId
     )
 
-fun localDateTimeFromMilliSecondsUnixTimeStamp(
-    msTimeStamp: Long,
+fun localDateTimeFromMilliSecondsUnixTimestamp(
+    timestamp: Long,
     zoneId: ZoneId = ZoneId.systemDefault()
 ): LocalDateTime =
     LocalDateTime.ofInstant(
-        Instant.ofEpochMilli(msTimeStamp),
+        Instant.ofEpochMilli(timestamp),
         zoneId
     )
 
