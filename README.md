@@ -5,18 +5,26 @@
 [![Build](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml/badge.svg)](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml)
 ![GitHub](https://img.shields.io/github/license/w2sv/KotlinUtils)
 
-A collection of pure kotlin utils built for Android Development
+A collection of JVM Kotlin Utils
 
 ## Installation with gradle & jitpack
 
-```gradle
-implementation 'com.github.w2sv:KotlinUtils:x.y.z'
+Add the Jitpack repository in your build configuration:
+
+```kotlin
+repositories {
+    maven("https://jitpack.io")
+}
 ```
 
-or get the latest snapshot of a certain branch:
+Add the dependency:
 
-```gradle
-implementation 'com.github.w2sv:KotlinUtils:<BRANCH-NAME>-SNAPSHOT'
+```kotlin
+dependencies {
+    implementation("com.github.w2sv:KotlinUtils:version")
+    // Or get the latest snapshot of a certain branch:
+    implementation("com.github.w2sv:KotlinUtils:branchname-snapshot")
+}
 ```
 
 ## License

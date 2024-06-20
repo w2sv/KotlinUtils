@@ -7,12 +7,17 @@ kotlin {
     jvmToolchain(17)
 }
 
+version = "0.1.0"
+
 publishing {
     publications {
         register<MavenPublication>("mavenJava") {
             groupId = "com.w2sv.kotlinutils"
             artifactId = "kotlinutils"
             version = version.toString()
+            afterEvaluate {
+                from(components["java"])
+            }
             pom {
                 developers {
                     developer {
@@ -20,7 +25,7 @@ publishing {
                         name.set("Janek Zangenberg")
                     }
                 }
-                description.set("Generic kotlin utils.")
+                description.set("Some generic kotlin utils.")
                 url.set("https://github.com/w2sv/KotlinUtils")
                 licenses {
                     license {
@@ -28,10 +33,6 @@ publishing {
                         url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
                     }
                 }
-            }
-
-            afterEvaluate {
-                from(components["java"])
             }
         }
     }
