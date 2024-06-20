@@ -2,5 +2,5 @@
 
 package com.w2sv.kotlinutils.extensions
 
-inline fun <reified T : Enum<T>> getEnumByOrdinal(ordinal: Int): T =
+inline fun <reified T : Enum<T>> enumEntryByOrdinal(ordinal: Int): T =
     enumValues<T>()[ordinal]

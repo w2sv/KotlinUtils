@@ -7,6 +7,9 @@ fun <K, V> Map<K, V>.valueEqualTo(other: Map<K, V>): Boolean =
         other.getValue(k) == v
     }
 
+fun <K> Map<K, Boolean>.filterTrueKeys(): Set<K> =
+    keys.filter { getValue(it) }
+
 fun <K> MutableMap<K, Boolean>.toggle(key: K) {
     put(key, !getValue(key))
 }
