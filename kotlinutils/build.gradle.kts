@@ -7,8 +7,6 @@ kotlin {
     jvmToolchain(17)
 }
 
-version = "0.1.0"
-
 publishing {
     publications {
         register<MavenPublication>("mavenJava") {
