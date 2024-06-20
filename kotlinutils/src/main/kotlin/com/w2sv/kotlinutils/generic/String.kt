@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.w2sv.kotlinutils.extensions
+package com.w2sv.kotlinutils.generic
 
 import java.util.Locale
 

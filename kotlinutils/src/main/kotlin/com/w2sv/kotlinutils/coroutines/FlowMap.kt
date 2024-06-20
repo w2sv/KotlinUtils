@@ -1,6 +1,6 @@
 package com.w2sv.kotlinutils.coroutines
 
-import com.w2sv.kotlinutils.extensions.filter
+import com.w2sv.kotlinutils.generic.filter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted

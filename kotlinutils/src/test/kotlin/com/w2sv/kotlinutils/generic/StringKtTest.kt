@@ -1,4 +1,4 @@
-package com.w2sv.kotlinutils.extensions
+package com.w2sv.kotlinutils.generic
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

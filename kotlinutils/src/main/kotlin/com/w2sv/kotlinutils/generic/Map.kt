@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.w2sv.kotlinutils.extensions
+package com.w2sv.kotlinutils.generic
 
 fun <K, V> Map<K, V>.valueEqualTo(other: Map<K, V>): Boolean =
     all { (k, v) ->

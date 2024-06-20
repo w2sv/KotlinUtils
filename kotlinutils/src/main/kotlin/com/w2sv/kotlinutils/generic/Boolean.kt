@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.w2sv.kotlinutils.extensions
+package com.w2sv.kotlinutils.generic
 
 val Boolean.asInt: Int
     get() = if (equals(true)) 1 else 0
