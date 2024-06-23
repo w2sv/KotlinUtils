@@ -5,7 +5,7 @@
 [![Build](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml/badge.svg)](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml)
 ![GitHub](https://img.shields.io/github/license/w2sv/KotlinUtils)
 
-A collection of JVM Kotlin Utilities. Duh.
+A collection of JVM Kotlin utilities. Duh.
 
 ## Installation with gradle & jitpack
 
