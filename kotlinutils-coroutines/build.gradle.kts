@@ -11,7 +11,7 @@ publishing {
     publications {
         register<MavenPublication>("mavenJava") {
             groupId = "com.w2sv.kotlinutils"
-            artifactId = "kotlinutils"
+            artifactId = "coroutines"
             version = version.toString()
             afterEvaluate {
                 from(components["java"])
@@ -38,5 +38,4 @@ publishing {
 
 dependencies {
     implementation(libs.kotlinx.coroutines)
-    testImplementation(libs.junit)
 }
