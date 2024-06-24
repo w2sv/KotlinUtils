@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-include(":kotlinutils")
-include(":kotlinutils-coroutines")
+include(":kotlinutils:core")
+include(":kotlinutils:coroutines")

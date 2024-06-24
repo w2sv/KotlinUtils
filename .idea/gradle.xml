@@ -10,7 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/kotlinutils" />
-            <option value="$PROJECT_DIR$/kotlinutils-coroutines" />
+            <option value="$PROJECT_DIR$/kotlinutils/core" />
+            <option value="$PROJECT_DIR$/kotlinutils/coroutines" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

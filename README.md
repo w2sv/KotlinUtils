@@ -21,9 +21,11 @@ Add the dependency:
 
 ```kotlin
 dependencies {
-    implementation("com.github.w2sv:KotlinUtils:version")
+    implementation("com.github.w2sv.KotlinUtils:core:version")
+    implementation("com.github.w2sv.KotlinUtils:coroutines:version")
+
     // Or get the latest snapshot of a certain branch:
-    implementation("com.github.w2sv:KotlinUtils:branchname-snapshot")
+    implementation("com.github.w2sv.KotlinUtils:artefact:branchname-snapshot")
 }
 ```
 
