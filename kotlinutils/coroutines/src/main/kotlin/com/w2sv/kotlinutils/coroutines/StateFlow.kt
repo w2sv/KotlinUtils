@@ -1,5 +1,8 @@
+@file:Suppress("unused")
+
 package com.w2sv.kotlinutils.coroutines
 
+import kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
@@ -15,6 +18,7 @@ import kotlinx.coroutines.flow.stateIn
  *
  * Source: https://github.com/Kotlin/kotlinx.coroutines/issues/2631#issuecomment-870565860
  */
+@OptIn(ExperimentalForInheritanceCoroutinesApi::class)
 class DerivedStateFlow<T>(
     private val getValue: () -> T,
     private val flow: Flow<T>
@@ -95,9 +99,17 @@ fun <T1, T2, T3, T4, T5, R> combineStates(
 inline fun <reified T, R> combineStates(
     vararg flows: StateFlow<T>,
     crossinline transform: (Array<T>) -> R
-): StateFlow<R> = DerivedStateFlow(
-    getValue = { transform(flows.map { it.value }.toTypedArray()) },
-    flow = combine(*flows) {
-        transform(it)
-    }
-)
+): StateFlow<R> =
+    DerivedStateFlow(
+        getValue = { transform(flows.map { it.value }.toTypedArray()) },
+        flow = combine(*flows) { transform(it) }
+    )
+
+inline fun <reified T, R> combineStates(
+    flows: Iterable<StateFlow<T>>,
+    crossinline transform: (Array<T>) -> R
+): StateFlow<R> =
+    DerivedStateFlow(
+        getValue = { transform(flows.map { it.value }.toTypedArray()) },
+        flow = combine(flows) { transform(it) }
+    )

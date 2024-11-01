@@ -17,3 +17,25 @@ fun <T> Flow<T>.stateInWithSynchronousInitial(
     scope: CoroutineScope
 ): StateFlow<T> =
     stateIn(scope = scope, started = SharingStarted.Eagerly, initialValue = firstBlocking())
+
+fun <T> Flow<T>.collectOn(
+    scope: CoroutineScope,
+    context: CoroutineContext = EmptyCoroutineContext,
+    start: CoroutineStart = CoroutineStart.DEFAULT,
+    collector: FlowCollector<T>
+) {
+    scope.launch(context, start) {
+        collect(collector)
+    }
+}
+
+fun <T> Flow<T>.collectLatestOn(
+    scope: CoroutineScope,
+    context: CoroutineContext = EmptyCoroutineContext,
+    start: CoroutineStart = CoroutineStart.DEFAULT,
+    action: suspend (value: T) -> Unit
+) {
+    scope.launch(context, start) {
+        collectLatest(action)
+    }
+}
