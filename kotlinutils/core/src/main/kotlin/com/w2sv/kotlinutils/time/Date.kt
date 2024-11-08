@@ -14,7 +14,11 @@ fun dateTimeNow(pattern: String = "yyyyMMdd_HHmmss", locale: Locale = Locale.get
 fun dateFromSecondsUnixTimestamp(timestamp: Long): Date =
     Date(timestamp * 1000)
 
-fun timeDeltaBetween(a: Date, b: Date, timeUnit: TimeUnit): Long =
+fun timeDeltaBetween(
+    a: Date,
+    b: Date,
+    timeUnit: TimeUnit
+): Long =
     timeUnit.convert(
         a.time - b.time,
         TimeUnit.MILLISECONDS

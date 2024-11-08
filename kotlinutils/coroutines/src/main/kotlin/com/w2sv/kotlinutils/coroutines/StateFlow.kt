@@ -94,19 +94,13 @@ fun <T1, T2, T3, T4, T5, R> combineStates(
         }
     )
 
-inline fun <reified T, R> combineStates(
-    vararg flows: StateFlow<T>,
-    crossinline transform: (Array<T>) -> R
-): StateFlow<R> =
+inline fun <reified T, R> combineStates(vararg flows: StateFlow<T>, crossinline transform: (Array<T>) -> R): StateFlow<R> =
     DerivedStateFlow(
         getValue = { transform(flows.map { it.value }.toTypedArray()) },
         flow = combine(*flows) { transform(it) }
     )
 
-inline fun <reified T, R> combineStates(
-    flows: Iterable<StateFlow<T>>,
-    crossinline transform: (Array<T>) -> R
-): StateFlow<R> =
+inline fun <reified T, R> combineStates(flows: Iterable<StateFlow<T>>, crossinline transform: (Array<T>) -> R): StateFlow<R> =
     DerivedStateFlow(
         getValue = { transform(flows.map { it.value }.toTypedArray()) },
         flow = combine(flows) { transform(it) }

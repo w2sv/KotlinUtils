@@ -9,19 +9,13 @@ import java.time.ZoneId
 import java.time.temporal.WeekFields
 import java.util.Locale
 
-fun localDateTimeFromSecondsUnixTimestamp(
-    timestamp: Long,
-    zoneId: ZoneId = ZoneId.systemDefault()
-): LocalDateTime =
+fun localDateTimeFromSecondsUnixTimestamp(timestamp: Long, zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
     LocalDateTime.ofInstant(
         Instant.ofEpochSecond(timestamp),
         zoneId
     )
 
-fun localDateTimeFromMilliSecondsUnixTimestamp(
-    timestamp: Long,
-    zoneId: ZoneId = ZoneId.systemDefault()
-): LocalDateTime =
+fun localDateTimeFromMilliSecondsUnixTimestamp(timestamp: Long, zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime =
     LocalDateTime.ofInstant(
         Instant.ofEpochMilli(timestamp),
         zoneId

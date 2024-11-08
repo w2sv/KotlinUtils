@@ -9,8 +9,9 @@ import java.util.Locale
  */
 fun String.capitalize(): String =
     replaceFirstChar {
-        if (it.isLowerCase())
+        if (it.isLowerCase()) {
             it.titlecase(Locale.getDefault())
-        else
+        } else {
             it.toString()
+        }
     }
