@@ -1,6 +1,7 @@
 [versions]
 kotlin = "2.0.21"
 java = "17"
+ktlint = "12.1.1"
 
 [libraries]
 kotlinx-coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0"
@@ -8,3 +9,4 @@ junit = "junit:junit:4.13.2"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
