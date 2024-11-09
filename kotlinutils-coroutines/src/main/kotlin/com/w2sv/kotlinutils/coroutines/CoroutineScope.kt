@@ -13,6 +13,9 @@ import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
+/**
+ * Launches the [block] coroutine after a delay of [timeMillis] ms.
+ */
 fun CoroutineScope.launchDelayed(
     timeMillis: Long,
     context: CoroutineContext = EmptyCoroutineContext,
@@ -38,14 +41,14 @@ fun <T> CoroutineScope.collectFromFlow(
     }
 
 /**
- * A shorthand for [CoroutineScope].launch { [Flow.collectLatest] ([action]) }
+ * A shorthand for [CoroutineScope].launch { [Flow.collectLatest] ([block]) }
  */
 fun <T> CoroutineScope.collectLatestFromFlow(
     flow: Flow<T>,
     context: CoroutineContext = EmptyCoroutineContext,
     start: CoroutineStart = CoroutineStart.DEFAULT,
-    action: suspend (value: T) -> Unit
+    block: suspend (value: T) -> Unit
 ): Job =
     launch(context, start) {
-        flow.collectLatest(action)
+        flow.collectLatest(block)
     }

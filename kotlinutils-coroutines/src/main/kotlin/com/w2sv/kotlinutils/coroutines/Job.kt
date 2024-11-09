@@ -16,6 +16,11 @@ inline fun Job?.invokeOnCompletion(crossinline block: () -> Unit): DisposableHan
         null
     }
 
+/**
+ * Cancels the job with the passed [cause] if it is active.
+ *
+ * @return `true` if the job was active and therefore cancelled, `false` otherwise.
+ */
 fun Job.cancelIfActive(cause: CancellationException? = null): Boolean {
     if (isActive) {
         cancel(cause)

@@ -16,12 +16,28 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
+/**
+ * @return the [Flow.first] value in a synchronous manner by blocking the current thread.
+ *
+ * @see Flow.first
+ * @see runBlocking
+ */
 fun <T> Flow<T>.firstBlocking(): T =
     runBlocking { first() }
 
-fun <T> Flow<T>.stateInWithSynchronousInitial(scope: CoroutineScope): StateFlow<T> =
-    stateIn(scope = scope, started = SharingStarted.Eagerly, initialValue = firstBlocking())
+/**
+ * Convert the [Flow] to a [StateFlow], whose initial value will be the [Flow.first] value.
+ * Use with caution: the [Flow.first] value will be procured synchronously by blocking the current thread.
+ *
+ * @see stateIn
+ * @see runBlocking
+ */
+fun <T> Flow<T>.stateInWithBlockingInitial(scope: CoroutineScope, started: SharingStarted = SharingStarted.Eagerly): StateFlow<T> =
+    stateIn(scope = scope, started = started, initialValue = firstBlocking())
 
+/**
+ * A shorthand for calling [Flow.collect] with the passed [collector] on the passed [scope].
+ */
 fun <T> Flow<T>.collectOn(
     scope: CoroutineScope,
     context: CoroutineContext = EmptyCoroutineContext,
@@ -33,6 +49,9 @@ fun <T> Flow<T>.collectOn(
     }
 }
 
+/**
+ * A shorthand for calling [Flow.collectLatest] with the passed [action] on the passed [scope].
+ */
 fun <T> Flow<T>.collectLatestOn(
     scope: CoroutineScope,
     context: CoroutineContext = EmptyCoroutineContext,
