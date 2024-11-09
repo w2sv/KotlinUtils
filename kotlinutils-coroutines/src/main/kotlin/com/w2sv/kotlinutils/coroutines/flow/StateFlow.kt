@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.w2sv.kotlinutils.coroutines
+package com.w2sv.kotlinutils.coroutines.flow
 
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.coroutineScope
@@ -13,9 +13,9 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 
 /**
- * Does not produce the same value in a row, so respect "distinct until changed emissions"
+ * Does not produce the same value in a row, so respect "distinct until changed emissions".
  *
- * Source: https://github.com/Kotlin/kotlinx.coroutines/issues/2631#issuecomment-870565860
+ * [Source](https://github.com/Kotlin/kotlinx.coroutines/issues/2631#issuecomment-870565860)
  */
 class DerivedStateFlow<T>(
     private val getValue: () -> T,

@@ -38,6 +38,6 @@ publishing {
 }
 
 dependencies {
-    implementation(project(":kotlinutils:core"))
+    implementation(project(":kotlinutils-core"))
     implementation(libs.kotlinx.coroutines)
 }

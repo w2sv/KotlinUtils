@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.w2sv.kotlinutils.coroutines
+package com.w2sv.kotlinutils.coroutines.flow
 
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
