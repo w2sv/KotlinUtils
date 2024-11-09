@@ -6,7 +6,7 @@ import org.junit.Test
 class FloatKtTest {
 
     @Test
-    fun rounded() {
+    fun testRounded() {
         assertEquals("43.987", 43.98723f.rounded(3))
         assertEquals("43.99", 43.98723f.rounded(2))
         assertEquals("44.0", 43.98723f.rounded(1))
