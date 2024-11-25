@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.0.21"
 java = "17"
-ktlint = "12.1.1"
+ktlint = "12.1.2"
 
 [libraries]
 kotlinx-coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0"
