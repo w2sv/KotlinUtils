@@ -3,7 +3,7 @@
 package com.w2sv.kotlinutils
 
 fun <K> Map<K, Boolean>.filterTrueKeys(): Set<K> =
-    keys.filter { getValue(it) }
+    keys.filterToSet { getValue(it) }
 
 fun <K> MutableMap<K, Boolean>.toggle(key: K) {
     put(key, !getValue(key))

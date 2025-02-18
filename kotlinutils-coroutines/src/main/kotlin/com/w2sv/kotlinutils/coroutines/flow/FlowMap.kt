@@ -2,7 +2,7 @@
 
 package com.w2sv.kotlinutils.coroutines.flow
 
-import com.w2sv.kotlinutils.filter
+import com.w2sv.kotlinutils.filterToSet
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
@@ -22,10 +22,10 @@ fun <K, V> Map<K, StateFlow<V>>.mapValuesToCurrentValue(): Map<K, V> =
     mapValues { it.value.value }
 
 fun <T> Map<T, StateFlow<Boolean>>.valueEnabledKeys(): Set<T> =
-    keys.filter { getValue(it).value }
+    keys.filterToSet { getValue(it).value }
 
 suspend fun <K> Map<K, Flow<Boolean>>.enabledKeys(): Set<K> =
-    keys.filter { getValue(it).first() }
+    keys.filterToSet { getValue(it).first() }
 
 fun <K, V> Map<K, Flow<V>>.statesIn(
     scope: CoroutineScope,
