@@ -3,7 +3,7 @@ package com.w2sv.kotlinutils
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 
-class SetExtensionsTest {
+class SetKtTest {
 
     @Test
     fun testFilterToSet() {
