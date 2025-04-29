@@ -38,5 +38,9 @@ inline fun <K, V> MutableMap<K, V>.update(key: K, transform: (V) -> V): Map<K, V
  *
  * @returns The resulting [Map] for method chaining.
  */
-inline fun <K, V> MutableMap<K, V>.updateOrPut(key: K, transform: (V) -> V, defaultValue: () -> V): Map<K, V> =
+inline fun <K, V> MutableMap<K, V>.updateOrPut(
+    key: K,
+    transform: (V) -> V,
+    defaultValue: () -> V
+): Map<K, V> =
     apply { this[key] = get(key)?.let { transform(it) } ?: defaultValue() }
