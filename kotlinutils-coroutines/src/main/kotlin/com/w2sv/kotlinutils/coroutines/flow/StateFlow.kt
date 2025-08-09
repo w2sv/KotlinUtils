@@ -2,6 +2,7 @@
 
 package com.w2sv.kotlinutils.coroutines.flow
 
+import kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
@@ -17,10 +18,8 @@ import kotlinx.coroutines.flow.stateIn
  *
  * [Source](https://github.com/Kotlin/kotlinx.coroutines/issues/2631#issuecomment-870565860)
  */
-class DerivedStateFlow<T>(
-    private val getValue: () -> T,
-    private val flow: Flow<T>
-) : StateFlow<T> {
+@OptIn(ExperimentalForInheritanceCoroutinesApi::class)
+class DerivedStateFlow<T>(private val getValue: () -> T, private val flow: Flow<T>) : StateFlow<T> {
 
     override val replayCache: List<T>
         get() = listOf(value)
