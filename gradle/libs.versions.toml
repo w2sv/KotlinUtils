@@ -2,7 +2,7 @@
 # @keep
 java = "17"
 kotlin = "2.2.0"
-ktlint = "13.0.0"
+ktlint = "14.0.1"
 versionCatalogUpdate = "1.0.0"
 
 [libraries]
