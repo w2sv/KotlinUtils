@@ -1,9 +1,9 @@
 [versions]
 # @keep
 java = "17"
-kotlin = "2.2.0"
-ktlint = "13.0.0"
-versionCatalogUpdate = "1.0.0"
+kotlin = "2.2.21"
+ktlint = "14.0.1"
+versionCatalogUpdate = "1.0.1"
 
 [libraries]
 junit = "junit:junit:4.13.2"
