@@ -14,3 +14,7 @@
 .cxx
 local.properties
 /.kotlin/
+
+# Release files
+version.txt
+release-notes.txt
