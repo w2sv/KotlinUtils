@@ -1,7 +1,7 @@
 [versions]
 # @keep
 java = "11"
-kotlin = "2.2.21"
+kotlin = "2.3.10"
 ktlint = "14.0.1"
 versionCatalogUpdate = "1.0.1"
 
