@@ -39,6 +39,7 @@ publishing {
 
 dependencies {
     implementation(project(":kotlinutils-core"))
-    implementation(libs.kotlinx.coroutines)
+    implementation(libs.kotlinx.coroutines.core)
     testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
 }
