@@ -2,12 +2,27 @@
 
 package com.w2sv.kotlinutils
 
-fun <K> Map<K, Boolean>.filterTrueKeys(): Set<K> =
-    keys.filterToSet { getValue(it) }
+/**
+ * Returns a list of keys whose values satisfy the given [predicate].
+ *
+ * The order of keys in the returned list matches the iteration order of [Map.keys].
+ *
+ * @param predicate a function to test each value.
+ * @return a [List] of keys whose corresponding values match [predicate].
+ */
+fun <K, V> Map<K, V>.keysWhere(predicate: (V) -> Boolean): List<K> =
+    keys.filter { predicate(getValue(it)) }
 
-fun <K> MutableMap<K, Boolean>.toggle(key: K) {
-    put(key, !getValue(key))
-}
+/**
+ * Returns a set of keys whose values satisfy the given [predicate].
+ *
+ * Each key appears only once in the returned set. The order is not guaranteed.
+ *
+ * @param predicate a function to test each value.
+ * @return a [Set] of keys whose corresponding values match [predicate].
+ */
+fun <K, V> Map<K, V>.keysWhereToSet(predicate: (V) -> Boolean): Set<K> =
+    keys.filterToSet { predicate(getValue(it)) }
 
 /**
  * Maps the entries of this [Map] using [transform] and returns the thereby created Map. Does not modify the original Map.

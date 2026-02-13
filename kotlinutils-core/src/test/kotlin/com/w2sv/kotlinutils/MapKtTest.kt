@@ -6,24 +6,15 @@ import org.junit.Test
 class MapKtTest {
 
     @Test
-    fun filterTrueKeys() {
-        assertEquals(
-            setOf("A", "C"),
-            mapOf("A" to true, "B" to false, "C" to true).filterTrueKeys()
-        )
+    fun keysWhere() {
+        val map = mapOf(1 to true, 2 to false, 3 to false)
+        assertEquals(listOf(2, 3), map.keysWhere { !it })
     }
 
     @Test
-    fun `toggle existing key`() {
-        val map = mutableMapOf("A" to true, "B" to false)
-        map.toggle("A")
-        map.toggle("B")
-        assertEquals(mapOf("A" to false, "B" to true), map)
-    }
-
-    @Test(expected = NoSuchElementException::class)
-    fun `toggle non-existent key throws exception`() {
-        mutableMapOf("A" to true).toggle("B") // Should throw NoSuchElementException
+    fun keysWhereToSet() {
+        val map = mapOf(1 to true, 2 to false, 3 to false)
+        assertEquals(setOf(2, 3), map.keysWhereToSet { !it })
     }
 
     @Test
