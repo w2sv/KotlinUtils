@@ -18,4 +18,22 @@ class CombineKtTest {
 
             assertEquals(listOf(1 to "a", 2 to "b"), result)
         }
+
+    @Test
+    fun `combineToTriple emits latest triples`() =
+        runTest {
+            val flowA = flowOf(1, 2)
+            val flowB = flowOf("a", "b")
+            val flowC = flowOf(true, false)
+
+            val result = combineToTriple(flowA, flowB, flowC).toList()
+
+            assertEquals(
+                listOf(
+                    Triple(1, "a", true),
+                    Triple(2, "b", false)
+                ),
+                result
+            )
+        }
 }
