@@ -2,9 +2,9 @@
 # @keep
 java = "11"
 kotlin = "2.3.10"
+kotlinx-coroutines = "1.10.2"
 ktlint = "14.0.1"
 versionCatalogUpdate = "1.0.1"
-kotlinx-coroutines = "1.10.2"
 
 [libraries]
 junit = "junit:junit:4.13.2"
