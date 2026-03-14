@@ -3,7 +3,7 @@
 java = "11"
 kotlin = "2.3.10"
 kotlinx-coroutines = "1.10.2"
-ktlint = "14.0.1"
+ktlint = "14.2.0"
 versionCatalogUpdate = "1.0.1"
 
 [libraries]
