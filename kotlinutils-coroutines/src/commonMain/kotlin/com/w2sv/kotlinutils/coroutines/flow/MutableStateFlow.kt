@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.update
  * Toggles the [MutableStateFlow.value] in an atomic manner by using [update].
  */
 fun MutableStateFlow<Boolean>.toggle() {
-    update { !it }
+    update { it.not() }
 }
 
 /**
