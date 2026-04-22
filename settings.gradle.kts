@@ -20,3 +20,4 @@ rootProject.name = "KotlinUtils"
 
 include(":kotlinutils-core")
 include(":kotlinutils-coroutines")
+include(":kotlinutils-jvm")

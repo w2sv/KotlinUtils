@@ -1,10 +1,19 @@
 plugins {
-    id("w2sv.kotlin-library")
+    id("w2sv.kmp-library")
 }
 
-dependencies {
-    implementation(project(":kotlinutils-core"))
-    implementation(libs.kotlinx.coroutines.core)
-    testImplementation(libs.junit)
-    testImplementation(libs.kotlinx.coroutines.test)
+kotlin {
+    iosArm64()
+    iosSimulatorArm64()
+
+    sourceSets {
+        commonMain.dependencies {
+            implementation(projects.kotlinutilsCore)
+            implementation(libs.kotlinx.coroutines.core)
+        }
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation(libs.kotlinx.coroutines.test)
+        }
+    }
 }

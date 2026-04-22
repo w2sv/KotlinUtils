@@ -5,7 +5,7 @@
 [![Build](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml/badge.svg)](https://github.com/w2sv/KotlinUtils/actions/workflows/workflow.yaml)
 ![GitHub](https://img.shields.io/github/license/w2sv/KotlinUtils)
 
-A collection of JVM Kotlin utilities. Duh.
+A collection of Kotlin utilities.
 
 ## Installation
 
@@ -13,5 +13,6 @@ A collection of JVM Kotlin utilities. Duh.
 dependencies {
     implementation("io.github.w2sv:kotlinutils-core:<version>")
     implementation("io.github.w2sv:kotlinutils-coroutines:<version>")
+    implementation("io.github.w2sv:kotlinutils-jvm:<version>")
 }
 ```

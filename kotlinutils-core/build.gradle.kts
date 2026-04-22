@@ -1,7 +1,13 @@
 plugins {
-    id("w2sv.kotlin-library")
+    id("w2sv.kmp-library")
 }
 
-dependencies {
-    testImplementation(libs.junit)
+kotlin {
+    iosArm64()
+    iosSimulatorArm64()
+
+    sourceSets {
+        commonMain.dependencies {}
+        commonTest.dependencies { implementation(kotlin("test")) }
+    }
 }

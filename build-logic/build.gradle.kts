@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation(plugin(libs.plugins.kotlin.jvm))
+    implementation(plugin(libs.plugins.kmp))
     implementation(plugin(libs.plugins.ktlint))
     implementation(plugin(libs.plugins.vanniktech.maven.publish))
 }
