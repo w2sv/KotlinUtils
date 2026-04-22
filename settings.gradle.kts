@@ -6,6 +6,7 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
     }
+    includeBuild("build-logic")
 }
 
 dependencyResolutionManagement {
@@ -14,6 +15,8 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+rootProject.name = "KotlinUtils"
 
 include(":kotlinutils-core")
 include(":kotlinutils-coroutines")
