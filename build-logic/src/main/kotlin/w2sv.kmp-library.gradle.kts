@@ -6,14 +6,13 @@ plugins {
 
 kotlin {
     jvmToolchain(11)
-
     jvm()
 }
 
 mavenPublishing {
-    // Use module name as artifact id
+    // Use module name as artifactId
     coordinates(
-        version = rootProject.version.toString(),
-        artifactId = path.removePrefix(":")
+        artifactId = project.name,
+        version = rootProject.version.toString()
     )
 }
