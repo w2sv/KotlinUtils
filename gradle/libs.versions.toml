@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.3.20"
-kotlinx-coroutines = "1.10.2"
+kotlinx-coroutines = "1.11.0"
 ktlint = "14.2.0"
 versionCatalogUpdate = "1.1.0"
 
