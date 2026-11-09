@@ -2,7 +2,7 @@
 kotlin = "2.4.21"
 kotlinx-coroutines = "1.11.0"
 ktlint = "14.2.0"
-versionCatalogUpdate = "1.1.1"
+versionCatalogUpdate = "1.1.2"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
