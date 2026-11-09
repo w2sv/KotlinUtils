@@ -9,10 +9,7 @@ import kotlin.coroutines.cancellation.CancellationException
  * rather than replacing the original cancellation.
  */
 @PublishedApi
-internal inline fun rethrowCancellation(
-    exception: CancellationException,
-    onCancellation: (CancellationException) -> Unit
-): Nothing {
+internal inline fun rethrowCancellation(exception: CancellationException, onCancellation: (CancellationException) -> Unit): Nothing {
     try {
         onCancellation(exception)
     } catch (callbackException: Throwable) {

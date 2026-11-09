@@ -19,10 +19,7 @@ import kotlin.coroutines.cancellation.CancellationException
  * @param block Suspending operation to execute.
  * @return A [Result] containing either the successful value or the exception.
  */
-suspend inline fun <T> runCatchingCancellable(
-    onCancellation: (CancellationException) -> Unit = {},
-    block: suspend () -> T
-): Result<T> =
+suspend inline fun <T> runCatchingCancellable(onCancellation: (CancellationException) -> Unit = {}, block: suspend () -> T): Result<T> =
     try {
         Result.success(block())
     } catch (exception: CancellationException) {
@@ -30,4 +27,3 @@ suspend inline fun <T> runCatchingCancellable(
     } catch (exception: Exception) {
         Result.failure(exception)
     }
-

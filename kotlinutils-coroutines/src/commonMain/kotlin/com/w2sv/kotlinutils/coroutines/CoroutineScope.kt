@@ -4,6 +4,8 @@ package com.w2sv.kotlinutils.coroutines
 
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.milliseconds
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Job
@@ -14,16 +16,35 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 /**
- * Launches the [block] coroutine after a delay of [timeMillis] ms.
+ * Launches [block] after [timeMillis] milliseconds.
+ * @deprecated Use the [Duration]-based overload instead.
  */
+@Deprecated(
+    message = "Use the overload accepting a Duration.",
+    replaceWith = ReplaceWith(
+        expression = "launchDelayed(timeMillis.milliseconds, context, start, block)",
+        imports = ["kotlin.time.Duration.Companion.milliseconds"]
+    )
+)
 fun CoroutineScope.launchDelayed(
     timeMillis: Long,
     context: CoroutineContext = EmptyCoroutineContext,
     start: CoroutineStart = CoroutineStart.DEFAULT,
     block: suspend CoroutineScope.() -> Unit
 ): Job =
+    launchDelayed(timeMillis.milliseconds, context, start, block)
+
+/**
+ * Launches the [block] coroutine after a delay of [delayFor].
+ */
+fun CoroutineScope.launchDelayed(
+    delayFor: Duration,
+    context: CoroutineContext = EmptyCoroutineContext,
+    start: CoroutineStart = CoroutineStart.DEFAULT,
+    block: suspend CoroutineScope.() -> Unit
+): Job =
     launch(context, start) {
-        delay(timeMillis)
+        delay(delayFor)
         block()
     }
 
